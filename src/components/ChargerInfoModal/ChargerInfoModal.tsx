@@ -55,7 +55,7 @@ export default function ChargerInfoModal({
                 <ChargerInfoText
                     label={"Nivel Aglomeratie"}
                     value={charger.crowding_level}
-                    scoreMaxRating={10}
+                    scoreMaxRating={5}
                 />
                 <ChargerInfoText
                     label={"Descriere"}

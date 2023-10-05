@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    webpack: (config) => {
-        config.resolve.fallback = { fs: false };
+    webpack: (config, { isServer }) => {
+        if (!isServer) {
+            config.resolve.fallback.fs = false;
+            config.resolve.fallback.net = false;
+        }
 
         return config;
     },
