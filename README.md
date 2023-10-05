@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:8000) with your browser to see the result.
 
 
 ![image](https://github.com/lucaay/aplicatie-statii-incarcare/assets/32814024/7177da7a-0768-40c6-bded-9101655f1d80)
