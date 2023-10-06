@@ -25,6 +25,7 @@ const FiltersComponent = ({ setFilters, filters }: FiltersComponentProps) => {
 
     return (
         <div className={styles["filtersContainer"]}>
+            <h2 className={styles["title"]}>Harta Statii Incarcare EV</h2>
             {filters ? (
                 <p style={{ backgroundColor: "red" }}>Aveti filtre aplicate!</p>
             ) : (
@@ -34,7 +35,7 @@ const FiltersComponent = ({ setFilters, filters }: FiltersComponentProps) => {
                 </p>
             )}
             <div className={styles["filters"]}>
-                <h1>Filtre</h1>
+                <h3>Filtre</h3>
                 <div className={styles["filter-part"]}>
                     <TextField
                         id="outlined-basic"
