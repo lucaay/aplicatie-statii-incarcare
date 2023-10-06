@@ -1,0 +1,21 @@
+.modal-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    .rating-icon {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+.edit-icon {
+    font-size: 1.25rem;
+    margin-top: 5px;
+    margin-left: 1rem;
+    cursor: pointer;
+    &:hover {
+        color: gray;
+    }
+}

@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "@emotion/server": "^11.11.0",
+        "@mui/icons-material": "^5.14.12",
         "@mui/material": "^5.14.12",
         "@react-google-maps/api": "^2.19.2",
         "mongodb": "^6.1.0",
@@ -22,9 +23,11 @@
     "devDependencies": {
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
+        "@types/mongodb": "^4.0.7",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
+        "axios": "^1.5.1",
         "eslint": "^8",
         "eslint-config-next": "13.5.4",
         "sass": "^1.68.0",
@@ -35,7 +38,6 @@
         "fs": false,
         "path": false,
         "os": false,
-        "net": false,
         "tls": false
     }
 }

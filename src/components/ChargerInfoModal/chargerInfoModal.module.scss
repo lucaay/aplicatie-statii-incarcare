@@ -1,0 +1,41 @@
+.with-edit-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .edit-icon {
+        font-size: 1.25rem;
+        margin-top: 5px;
+        margin-left: 1rem;
+        cursor: pointer;
+        &:hover {
+            color: gray;
+        }
+    }
+}
+
+.modal-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    .rating-icon {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+.alert {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 99999;
+    @media (min-width: 640px) {
+        right: 15px;
+        bottom: 10px;
+    }
+    @media (min-width: 864px) {
+        right: 50px;
+        bottom: 50px;
+    }
+}

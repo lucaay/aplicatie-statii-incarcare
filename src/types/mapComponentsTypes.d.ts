@@ -1,5 +1,5 @@
 export type Charger = {
-    _id: string;
+    _id: mongoDB.BSON.ObjectId;
     name: string;
     coordinates: {
         lat: number;
