@@ -1,8 +1,9 @@
 import { Box, Button, Modal, Rating, Typography } from "@mui/material";
 import React from "react";
 import styles from "./crowdingLevelModal.module.scss";
-import { crowdingLevelChange } from "@/functions/modalFunctions";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
+import updateCrowdingLevel from "@/pages/api/ratings";
+import { Charger } from "@/types/mapComponentsTypes";
 
 const customStyle = {
     position: "absolute" as "absolute",
@@ -17,7 +18,7 @@ const customStyle = {
 };
 
 interface CrowdingLevelModalProps {
-    crowdingLevel: number;
+    charger: Charger;
     setAlertOptions: React.Dispatch<
         React.SetStateAction<{
             text: string;
@@ -27,7 +28,7 @@ interface CrowdingLevelModalProps {
 }
 
 const CrowdingLevelModal = ({
-    crowdingLevel,
+    charger,
     setAlertOptions,
 }: CrowdingLevelModalProps) => {
     const [open, setOpen] = React.useState(false);
@@ -62,11 +63,13 @@ const CrowdingLevelModal = ({
                             defaultValue={0}
                             onChange={(e, value) => {
                                 value &&
-                                    crowdingLevelChange({
+                                    updateCrowdingLevel({
+                                        _id: charger._id,
                                         newValue: value,
-                                        currentValue: crowdingLevel,
+                                        currentValue: charger.crowding_level,
                                         setAlertOptions,
                                     });
+
                                 setOpen(false);
                             }}
                         />

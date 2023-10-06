@@ -6,7 +6,7 @@ import { Charger } from "@/types/mapComponentsTypes";
 import ChargerInfoText from "./ChargerInfoText/ChargerInfoText";
 import styles from "./chargerInfoModal.module.scss";
 import { Icon, IconButton, Rating } from "@mui/material";
-import { plugScoreRatingChange } from "@/functions/modalFunctions";
+import { plugScoreRatingChange } from "../../functions/modalFunctions";
 import CrowdingLevelModal from "./CrowdingLevelModal/CrowdingLevelModal";
 import Alert from "@mui/material/Alert";
 import { useState } from "react";
@@ -66,7 +66,6 @@ export default function ChargerInfoModal({
                                         currentValue: charger.plug_score,
                                         setAlertOptions,
                                     });
-                
                             }}
                         />
                     </div>
@@ -94,7 +93,7 @@ export default function ChargerInfoModal({
                             scoreMaxRating={5}
                         />
                         <CrowdingLevelModal
-                            crowdingLevel={charger.crowding_level}
+                            charger={charger}
                             setAlertOptions={setAlertOptions}
                         />
                     </div>

@@ -23,6 +23,7 @@
     "devDependencies": {
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
+        "@types/mongodb": "^4.0.7",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
@@ -37,7 +38,6 @@
         "fs": false,
         "path": false,
         "os": false,
-        "net": false,
         "tls": false
     }
 }

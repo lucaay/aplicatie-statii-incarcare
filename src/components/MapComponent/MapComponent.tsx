@@ -3,7 +3,7 @@ import React, { useMemo, useState } from "react";
 import styles from "./mapComponent.module.scss";
 import { Charger } from "@/types/mapComponentsTypes";
 import ChargerInfoModal from "../ChargerInfoModal/ChargerInfoModal";
-import { handleIconBasedOnPlugScore } from "@/functions/mapFunctions";
+import { handleIconBasedOnPlugScore } from "../../functions/mapFunctions";
 
 interface MapComponentProps {
     chargers?: Charger[];
