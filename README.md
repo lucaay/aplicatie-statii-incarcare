@@ -18,5 +18,7 @@ mobile:
 
 ![image](https://github.com/lucaay/aplicatie-statii-incarcare/assets/32814024/af733b4a-0dac-4c4e-af70-7c0d118b7c94)
 ![image](https://github.com/lucaay/aplicatie-statii-incarcare/assets/32814024/99109e9a-2c4b-45a1-a914-4da781c13946)
+![image](https://github.com/lucaay/aplicatie-statii-incarcare/assets/32814024/87f39a57-0f2d-400b-af0f-9a72c62ca6c5)
+
 
 
