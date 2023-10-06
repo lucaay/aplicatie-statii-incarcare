@@ -20,9 +20,6 @@ const FiltersComponent = ({ setFilters, filters }: FiltersComponentProps) => {
         null
     );
 
-    //TODO: REMOVE THIS
-    console.log(filters);
-
     return (
         <div className={styles["filtersContainer"]}>
             <h2 className={styles["title"]}>Harta Statii Incarcare EV</h2>
