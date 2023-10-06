@@ -24,3 +24,18 @@
         cursor: pointer;
     }
 }
+
+.alert {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 99999;
+    @media (min-width: 640px) {
+        right: 15px;
+        bottom: 10px;
+    }
+    @media (min-width: 864px) {
+        right: 50px;
+        bottom: 50px;
+    }
+}

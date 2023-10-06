@@ -5,10 +5,12 @@ import Modal from "@mui/material/Modal";
 import { Charger } from "@/types/mapComponentsTypes";
 import ChargerInfoText from "./ChargerInfoText/ChargerInfoText";
 import styles from "./chargerInfoModal.module.scss";
-import { Icon, Rating } from "@mui/material";
+import { Icon, IconButton, Rating } from "@mui/material";
 import { plugScoreRatingChange } from "@/functions/modalFunctions";
 import CrowdingLevelModal from "./CrowdingLevelModal/CrowdingLevelModal";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
+import Alert from "@mui/material/Alert";
+import { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
 
 const customStyle = {
     position: "absolute" as "absolute",
@@ -34,6 +36,10 @@ export default function ChargerInfoModal({
     charger,
 }: ChargerInfoModalProps) {
     const handleClose = () => setOpen(false);
+    const [alertOptions, setAlertOptions] = useState<{
+        text: string;
+        type: "success" | "error";
+    } | null>(null);
 
     return (
         <>
@@ -53,13 +59,15 @@ export default function ChargerInfoModal({
                             className={styles["rating-icon"]}
                             name="size-medium"
                             defaultValue={0}
-                            onChange={(e, value) =>
+                            onChange={(e, value) => {
                                 value &&
-                                plugScoreRatingChange({
-                                    newValue: value,
-                                    currentValue: charger.plug_score,
-                                })
-                            }
+                                    plugScoreRatingChange({
+                                        newValue: value,
+                                        currentValue: charger.plug_score,
+                                        setAlertOptions,
+                                    });
+                
+                            }}
                         />
                     </div>
 
@@ -87,6 +95,7 @@ export default function ChargerInfoModal({
                         />
                         <CrowdingLevelModal
                             crowdingLevel={charger.crowding_level}
+                            setAlertOptions={setAlertOptions}
                         />
                     </div>
                     <ChargerInfoText
@@ -95,6 +104,15 @@ export default function ChargerInfoModal({
                     />
                 </Box>
             </Modal>
+            {alertOptions && (
+                <Alert
+                    severity={alertOptions?.type}
+                    onClose={() => setAlertOptions(null)}
+                    className={styles["alert"]}
+                >
+                    {alertOptions.text}
+                </Alert>
+            )}
         </>
     );
 }

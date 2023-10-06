@@ -18,9 +18,18 @@ const customStyle = {
 
 interface CrowdingLevelModalProps {
     crowdingLevel: number;
+    setAlertOptions: React.Dispatch<
+        React.SetStateAction<{
+            text: string;
+            type: "success" | "error";
+        } | null>
+    >;
 }
 
-const CrowdingLevelModal = ({ crowdingLevel }: CrowdingLevelModalProps) => {
+const CrowdingLevelModal = ({
+    crowdingLevel,
+    setAlertOptions,
+}: CrowdingLevelModalProps) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => {
         setOpen(true);
@@ -56,6 +65,7 @@ const CrowdingLevelModal = ({ crowdingLevel }: CrowdingLevelModalProps) => {
                                     crowdingLevelChange({
                                         newValue: value,
                                         currentValue: crowdingLevel,
+                                        setAlertOptions,
                                     });
                                 setOpen(false);
                             }}
