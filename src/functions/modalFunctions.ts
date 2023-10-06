@@ -1,5 +1,12 @@
-export function crowdingLevelChange() {
-    console.log("test crowding");
+export function crowdingLevelChange({
+    currentValue,
+    newValue,
+}: {
+    currentValue: number;
+    newValue: number;
+}) {
+    const newLevel: number = Math.round((currentValue + newValue) / 2);
+    alert("Multumim pentru informare!");
 }
 
 export function plugScoreRatingChange({
@@ -9,7 +16,6 @@ export function plugScoreRatingChange({
     currentValue: number;
     newValue: number;
 }) {
-    console.log("test plug score");
-    const newRating: number = Math.round(((currentValue + newValue) / 2));
-    alert("Multumim pentru rating!" + newRating);
+    const newRating: number = Math.round((currentValue + newValue) / 2);
+    alert("Multumim pentru rating!");
 }
