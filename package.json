@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "@emotion/server": "^11.11.0",
+        "@mui/icons-material": "^5.14.12",
         "@mui/material": "^5.14.12",
         "@react-google-maps/api": "^2.19.2",
         "mongodb": "^6.1.0",

@@ -5,6 +5,8 @@ import Modal from "@mui/material/Modal";
 import { Charger } from "@/types/mapComponentsTypes";
 import ChargerInfoText from "./ChargerInfoText/ChargerInfoText";
 import styles from "./chargerInfoModal.module.scss";
+import { Icon } from "@mui/material";
+import BorderColorIcon from "@mui/icons-material/BorderColor";
 
 const customStyle = {
     position: "absolute" as "absolute",
@@ -43,22 +45,34 @@ export default function ChargerInfoModal({
                 <Typography id="modal-modal-title" variant="h5">
                     {charger.name}
                 </Typography>
-                <ChargerInfoText
-                    label={"Scor Statie"}
-                    value={charger.plug_score}
-                    scoreMaxRating={5}
-                />
+                <div className={styles["with-edit-div"]}>
+                    <ChargerInfoText
+                        label={"Scor Statie"}
+                        value={charger.plug_score}
+                        scoreMaxRating={5}
+                    />
+                    <BorderColorIcon
+                        className={styles["edit-icon"]}
+                        onClick={() => console.log("edit plug score")}
+                    />
+                </div>
                 <ChargerInfoText
                     label={"Porturi disponibile"}
                     value={charger.ports}
                 />
                 <ChargerInfoText label={"Adresa"} value={charger.address} />
                 <ChargerInfoText label={"Pret"} value={charger.price_info} />
-                <ChargerInfoText
-                    label={"Nivel Aglomeratie"}
-                    value={charger.crowding_level}
-                    scoreMaxRating={5}
-                />
+                <div className={styles["with-edit-div"]}>
+                    <ChargerInfoText
+                        label={"Nivel Aglomeratie"}
+                        value={charger.crowding_level}
+                        scoreMaxRating={5}
+                    />
+                    <BorderColorIcon
+                        className={styles["edit-icon"]}
+                        onClick={() => console.log("edit crowding_level ")}
+                    />
+                </div>
                 <ChargerInfoText
                     label={"Descriere"}
                     value={charger.description}

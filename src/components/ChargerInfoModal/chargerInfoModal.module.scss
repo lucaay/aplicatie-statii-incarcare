@@ -1,0 +1,14 @@
+.with-edit-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .edit-icon {
+        font-size: 1.25rem;
+        margin-top: 5px;
+        margin-left: 1rem;
+        cursor: pointer;
+        &:hover {
+            color: gray;
+        }
+    }
+}
