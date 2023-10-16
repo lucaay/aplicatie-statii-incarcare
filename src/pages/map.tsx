@@ -15,9 +15,19 @@ export const getServerSideProps: GetServerSideProps<ChargersCon> = async () => {
 
         const chargers = await db
             .collection("car-chargers-info")
-            .find({})
+            .find(
+                {},
+                {
+                    projection: {
+                        _id: 1,
+                        coordinates: 1,
+                        plug_score: 1,
+                    },
+                }
+            )
             .toArray();
-
+            console.log(chargers);
+            
         return {
             props: {
                 isConnected: true,

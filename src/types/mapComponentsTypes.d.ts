@@ -1,5 +1,5 @@
 export type Charger = {
-    _id: mongoDB.BSON.ObjectId;
+    _id: ObjectId;
     name: string;
     coordinates: {
         lat: number;
@@ -11,6 +11,7 @@ export type Charger = {
     price_info: string;
     crowding_level: number;
     description: string;
+    chargerStatus?: boolean;
 };
 
 export type ChargersCon = {

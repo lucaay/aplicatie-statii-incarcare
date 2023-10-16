@@ -4,19 +4,20 @@ import styles from "./mapComponent.module.scss";
 import { Charger } from "@/types/mapComponentsTypes";
 import ChargerInfoModal from "../ChargerInfoModal/ChargerInfoModal";
 import { handleIconBasedOnPlugScore } from "../../functions/mapFunctions";
+import { useApiRequest } from "@/hooks/useApiRequest";
+import mongoDB, { ObjectId } from "mongodb";
 
 interface MapComponentProps {
     chargers?: Charger[];
 }
 
 const MapComponent = ({ chargers }: MapComponentProps) => {
+    const [selectedChargerID, setSelectedChargerID] =
+        useState<ObjectId | null>();
     const [open, setOpen] = useState(false);
-    const [selectedCharger, setSelectedCharger] = useState<Charger | null>(
-        null
-    );
 
-    const handleMarkerClick = (charger: Charger) => {
-        setSelectedCharger(charger);
+    const handleMarkerClick = (chargerID: ObjectId) => {
+        setSelectedChargerID(chargerID);
         setOpen(true);
     };
 
@@ -34,7 +35,7 @@ const MapComponent = ({ chargers }: MapComponentProps) => {
                     <MarkerF
                         position={charger.coordinates}
                         key={charger._id}
-                        onClick={() => handleMarkerClick(charger)}
+                        onClick={() => handleMarkerClick(charger._id)}
                         label={{
                             text: charger.plug_score.toString(),
                             className: styles["marker-label"],
@@ -43,13 +44,11 @@ const MapComponent = ({ chargers }: MapComponentProps) => {
                     />
                 ))}
             </GoogleMap>
-            {selectedCharger && (
-                <ChargerInfoModal
-                    open={open}
-                    setOpen={setOpen}
-                    charger={selectedCharger}
-                />
-            )}
+            <ChargerInfoModal
+                open={open}
+                setOpen={setOpen}
+                chargerID={selectedChargerID}
+            />
         </>
     );
 };
