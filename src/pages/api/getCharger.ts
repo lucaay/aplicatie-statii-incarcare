@@ -19,7 +19,6 @@ export default async function handler(req: any, res: any) {
                     _id: new ObjectId(bodyObject._id),
                 })
                 .toArray();
-            console.log(charger[0]);
 
             return res.json(charger[0]);
     }

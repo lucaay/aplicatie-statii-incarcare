@@ -26,8 +26,7 @@ export const getServerSideProps: GetServerSideProps<ChargersCon> = async () => {
                 }
             )
             .toArray();
-            console.log(chargers);
-            
+
         return {
             props: {
                 isConnected: true,

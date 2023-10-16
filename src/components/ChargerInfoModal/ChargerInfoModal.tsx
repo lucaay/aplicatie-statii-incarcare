@@ -51,7 +51,7 @@ export default function ChargerInfoModal({
     const [
         getChargerFn,
         { data: charger, loading: loadingCharger, error: chargerError },
-    ] = useApiRequest<void, { _id: ObjectId }>("/api/getCharger", "POST");
+    ] = useApiRequest<Charger>("/api/getCharger", "POST");
 
     const [updateChargerStartStatusFn, { data, loading, error }] =
         useApiRequest<void, Partial<updateChargerStartStatusProps>>(

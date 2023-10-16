@@ -1,5 +1,25 @@
 import { useState, useCallback } from "react";
 
+type Maybe<T> = T | undefined;
+type State<Data, ErrorType> =
+    | {
+          data: Data;
+          loading: false;
+          success: true;
+          error: Maybe<ErrorType>;
+      }
+    | {
+          data: undefined;
+          loading: true;
+          success: false;
+          error: Maybe<ErrorType>;
+      }
+    | {
+          data: undefined;
+          loading: false;
+          success: false;
+          error: Maybe<ErrorType>;
+      };
 export function useRequestState<Data = unknown, ErrorType = unknown>() {
     const [state, setState] = useState<State<Data, ErrorType>>({
         loading: false,
