@@ -22,6 +22,10 @@ export const getServerSideProps: GetServerSideProps<ChargersCon> = async () => {
                         _id: 1,
                         coordinates: 1,
                         plug_score: 1,
+                        name: 1,
+                        ports: 1,
+                        address: 1,
+                        price_info: 1,
                     },
                 }
             )
