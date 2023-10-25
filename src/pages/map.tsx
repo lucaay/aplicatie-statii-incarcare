@@ -15,7 +15,20 @@ export const getServerSideProps: GetServerSideProps<ChargersCon> = async () => {
 
         const chargers = await db
             .collection("car-chargers-info")
-            .find({})
+            .find(
+                {},
+                {
+                    projection: {
+                        _id: 1,
+                        coordinates: 1,
+                        plug_score: 1,
+                        name: 1,
+                        ports: 1,
+                        address: 1,
+                        price_info: 1,
+                    },
+                }
+            )
             .toArray();
 
         return {
