@@ -1,4 +1,4 @@
-#Aplicatie Statii incarcare masini electrice
+# Aplicatie Statii incarcare masini electrice
 
 LIVE DEMO: https://chargin-it.vercel.app/map
 
